@@ -1,1 +1,1 @@
-web: python src/app.py
+web: waitress-serve --port=$PORT src.app:app
