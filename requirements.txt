@@ -2,4 +2,6 @@
 Flask
 Pillow
 waitress
+flask-cors
+
 
