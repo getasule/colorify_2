@@ -9,8 +9,12 @@ CORS(app)
 
 def convert_to_sketch(image):
     gray = ImageOps.grayscale(image)
-    edge = gray.filter(ImageFilter.FIND_EDGES)
-    return edge
+    inverted = ImageOps.invert(gray)
+    blur = inverted.filter(ImageFilter.GaussianBlur(10))
+    sketch = Image.blend(gray, blur, alpha=0.5)
+    final = ImageOps.invert(sketch)
+    return final
+
 
 @app.route("/convert", methods=["POST"])
 def convert():
