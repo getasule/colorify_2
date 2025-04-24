@@ -1,9 +1,11 @@
 import os
+from flask_cors import CORS
 from flask import Flask, request, jsonify, send_file
 from PIL import Image, ImageFilter, ImageOps
 import io
 
 app = Flask(__name__)
+CORS(app)
 
 def convert_to_sketch(image):
     gray = ImageOps.grayscale(image)
