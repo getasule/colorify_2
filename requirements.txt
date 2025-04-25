@@ -1,7 +1,4 @@
 
 Flask
-Pillow
-waitress
 flask-cors
-
-
+Pillow
